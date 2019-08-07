@@ -1,6 +1,10 @@
 <div class="pages">
-  <a>1</a>
-  <a class="selected">2</a>
-  <a>3</a>
-  <a>4</a>
+  <a
+    *ngFor="let p of pages$ | async"
+    [routerLink]="['/search']"
+    [queryParams]="{ page: p.page }"
+    [ngClass]="{ selected: p.selected }"
+    queryParamsHandling="merge">
+    {{ p.page }}
+  </a>
 </div>
