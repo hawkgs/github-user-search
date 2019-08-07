@@ -38,12 +38,31 @@ img {
   width: 100%;
 }
 
-.additional {
+.additional-info {
   margin-top: 10px;
   font-size: 14px;
   color: #999;
 }
 
-.additional > span {
+.additional-info > span {
   margin-right: 15px;
+}
+
+.profile.loading .bio,
+.profile.loading .additional-info {
+  background-color: #d1d5da;
+  border-radius: 5px;
+  animation: pulse 0.5s ease infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.3;
+  }
 }
