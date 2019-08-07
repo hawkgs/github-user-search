@@ -1,0 +1,49 @@
+.profile {
+  width: 100%;
+  border: 1px solid #d1d5da;
+  border-radius: 5px;
+  height: 100px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.profile:hover {
+  border-color: #117dd3;
+  box-shadow: 0 0 5px #117dd3;
+}
+
+img {
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.details {
+  flex: 1;
+  width: calc(100% - 90px);
+}
+
+.name {
+  font-size: 15px;
+}
+
+.bio {
+  font-size: 12px;
+  margin-top: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.additional {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #999;
+}
+
+.additional > span {
+  margin-right: 15px;
+}
