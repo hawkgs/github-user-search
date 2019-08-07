@@ -1,4 +1,4 @@
-import { Record, Map, List } from 'immutable';
+import { Record, Map, Set } from 'immutable';
 import { Config } from '../config/config';
 
 const userRecord = Record({
@@ -6,7 +6,7 @@ const userRecord = Record({
   username: '',
   fullName: '',
   bio: '',
-  followes: 0,
+  followers: 0,
   repos: 0,
   location: '',
   email: '',
@@ -20,7 +20,7 @@ export interface IUser {
   username: string;
   fullName: string;
   bio: string;
-  followes: number;
+  followers: number;
   repos: number;
   location: string;
   email: string;
@@ -34,7 +34,7 @@ export class User extends userRecord implements IUser {
   username: string;
   fullName: string;
   bio: string;
-  followes: number;
+  followers: number;
   repos: number;
   location: string;
   email: string;
@@ -50,19 +50,19 @@ export class User extends userRecord implements IUser {
 const pageRecord = Record({
   page: 0,
   size: Config.pageSize,
-  users: List<number>([])
+  users: Set<number>([])
 });
 
 export interface IPage {
   page: number;
   size: number;
-  users: List<number>;
+  users: Set<number>;
 }
 
 export class Page extends pageRecord implements IPage {
   page: number;
   size: number;
-  users: List<number>;
+  users: Set<number>;
 
   constructor(config: Partial<IPage>) {
     super(config);
@@ -90,17 +90,20 @@ export class Search extends searchRecord implements ISearch {
 
 const storeRecord = Record({
   users: Map<number, User>([]),
-  pages: Map<number, Page>([])
+  pages: Map<number, Page>([]),
+  search: null
 });
 
 export interface IStore {
   users: Map<number, User>;
   pages: Map<number, Page>;
+  search: Search | null;
 }
 
 export class Store extends storeRecord implements IStore {
   users: Map<number, User>;
   pages: Map<number, Page>;
+  search: Search | null;
 
   constructor(config: Partial<IStore>) {
     super(config);
@@ -109,5 +112,6 @@ export class Store extends storeRecord implements IStore {
 
 export const initialState = new Store({
   users: Map<number, User>([]),
-  pages: Map<number, Page>([])
+  pages: Map<number, Page>([]),
+  search: null
 });
