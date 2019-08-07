@@ -1,0 +1,22 @@
+.pages {
+  text-align: center;
+  margin-top: 45px;
+}
+
+a {
+  color: #333;
+  margin: 0 3px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 0 7px;
+}
+
+a:hover {
+  border-color: #d1d5da;
+}
+
+a.selected {
+  border-color: #117dd3;
+  color: #117dd3;
+}
