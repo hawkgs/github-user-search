@@ -1,0 +1,25 @@
+:host {
+  position: relative;
+  color: #333;
+  letter-spacing: 0.5em;
+  animation: pulse 0.5s ease infinite;
+  margin: 30px 0;
+  display: block;
+  border: 1px solid #d1d5da;
+  height: 100px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:host::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: #d1d5da;
+  border-radius: 3px;
+  top: 10px;
+  left: 10px;
+}

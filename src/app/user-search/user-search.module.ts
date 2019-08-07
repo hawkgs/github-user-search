@@ -8,6 +8,7 @@ import { SearchInputComponent } from './search-input/search-input.component';
 import { ResultsListComponent } from './results-list/results-list.component';
 import { UserProfileComponent } from './results-list/user-profile/user-profile.component';
 import { PagesComponent } from './results-list/pages/pages.component';
+import { LoaderComponent } from './results-list/loader/loader.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PagesComponent } from './results-list/pages/pages.component';
     SearchInputComponent,
     ResultsListComponent,
     UserProfileComponent,
-    PagesComponent
+    PagesComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,
