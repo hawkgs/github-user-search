@@ -36,12 +36,14 @@ img {
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
+  min-height: 12px;
 }
 
 .additional-info {
   margin-top: 10px;
   font-size: 14px;
   color: #999;
+  min-height: 15px;
 }
 
 .additional-info > span {

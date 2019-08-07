@@ -1,15 +1,13 @@
-<div class="profile">
-  <img src="https://avatars3.githubusercontent.com/u/4449497?s=460&v=4" width="80" height="80" alt="pesho233" />
+<div [ngClass]="{ 'profile': true, 'loading': !user.completeData }" (click)="onClick()">
+  <img src="{{ user.avatar }}" width="80" height="80" alt="{{ user.username }}" />
   <div class="details">
-    <p class="name"><strong>pesho233</strong> (Pesho Petrov)</p>
-    <p class="bio">
-      Bio something Bio something Bio something Bio something Bio something Bio something Bio something Bio something Bio something Bio something Bio something
-    </p>
+    <p class="name"><strong>{{ user.username }}</strong><span *ngIf="user.fullName"> ({{ user.fullName }})</span></p>
+    <p class="bio">{{ user.bio }}</p>
     <p class="additional-info">
-      <span>📑 <strong>Repos:</strong> 3</span>
-      <span>🧝 <strong>Followers:</strong> 12</span>
-      <span>📍 <strong>Location:</strong> San Francisco</span>
-      <span>📧 <strong>Email:</strong> pesho@gmail.com</span>
+      <span *ngIf="user.completeData">📑 <strong>Repos:</strong> {{ user.repos }}</span>
+      <span *ngIf="user.completeData">🧝 <strong>Followers:</strong> {{ user.followers }}</span>
+      <span *ngIf="user.location">📍 <strong>Location:</strong> {{ user.location }}</span>
+      <span *ngIf="user.email">📧 <strong>Email:</strong> {{ user.email }}</span>
     </p>
   </div>
 </div>

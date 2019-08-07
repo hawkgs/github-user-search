@@ -10,9 +10,9 @@
   width: 900px;
   margin: 0 auto;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   height: inherit;
+  cursor: pointer;
 }
 
 .logo {
