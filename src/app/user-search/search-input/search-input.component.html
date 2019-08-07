@@ -1,10 +1,10 @@
 <div class="search-input">
   <div>
     <h3>🔍 Search for a user</h3>
-    <div class="field">
-      <input type="text" placeholder="e.g. johndoe" />
+    <form class="form" (submit)="onSearch()">
+      <input [(ngModel)]="searchString" name="searchInput" type="text" placeholder="e.g. johndoe" />
       <button>Search</button>
-    </div>
+    </form>
     <div class="advanced-search">
       <h3>Advanced search</h3>
       You can search users by providing <strong>email</strong>, <strong>repos</strong> (more than N),
