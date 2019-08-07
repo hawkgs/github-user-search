@@ -1,4 +1,7 @@
-<h3>Search results from "{{ query }}"</h3>
+<h3>
+  Search results for "{{ query }}"
+  <a [routerLink]="['/']" class="search-again">Search Again</a>
+</h3>
 <p class="results-count">
   <span *ngIf="search$ | async">Total results {{ (search$ | async).resultsCount }}</span>
 </p>
