@@ -1,1 +1,9 @@
-<p>results-list works!</p>
+<h3>Search results from "{{ query }}"</h3>
+<p class="results-count">
+  <span *ngIf="search$ | async">Total results {{ (search$ | async).resultsCount }}</span>
+</p>
+<gus-loader *ngIf="(pageUsers$ | async).size === 0"></gus-loader>
+<div *ngFor="let u of pageUsers$ | async" class="results">
+  <gus-user-profile [user]="u"></gus-user-profile>
+</div>
+<gus-pages></gus-pages>
