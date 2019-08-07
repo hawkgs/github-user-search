@@ -6,3 +6,13 @@ export const addUser = createAction(
   ActionType.AddUser,
   props<{ user: User }>()
 );
+
+export const updateUser = createAction(
+  ActionType.UpdateUser,
+  props<{ user: User }>()
+);
+
+export const loadUserData = createAction(
+  ActionType.LoadUserData,
+  props<{ username: string }>()
+);

@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+
 import { usersReducer } from './store/users';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { AppConfigToken, Config } from './config/config';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    EffectsModule.forRoot([]),
     StoreModule.forRoot({ users: usersReducer }),
     HttpClientModule
   ],

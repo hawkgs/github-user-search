@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { EffectsModule } from '@ngrx/effects';
 
 import { UserSearchRoutingModule } from './user-search-routing.module';
 import { UserSearchComponent } from './user-search.component';
@@ -10,6 +11,7 @@ import { UserProfileComponent } from './results-list/user-profile/user-profile.c
 import { PagesComponent } from './results-list/pages/pages.component';
 import { LoaderComponent } from './results-list/loader/loader.component';
 import { UsersApiRequests } from '../api/users.api-requests';
+import { UsersEffects } from '../store/users/users.effects';
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { UsersApiRequests } from '../api/users.api-requests';
   ],
   imports: [
     CommonModule,
-    UserSearchRoutingModule
+    UserSearchRoutingModule,
+    EffectsModule.forFeature([UsersEffects])
   ],
   providers: [UsersApiRequests]
 })
