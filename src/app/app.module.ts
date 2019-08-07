@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { Channel } from './channels/channel';
 import { HttpChannel } from './channels/http-channel';
 import { AppConfigToken, Config } from './config/config';
+import { pagesReducer } from './store/pages';
+import { searchReducer } from './store/search';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,11 @@ import { AppConfigToken, Config } from './config/config';
     BrowserModule,
     AppRoutingModule,
     EffectsModule.forRoot([]),
-    StoreModule.forRoot({ users: usersReducer }),
+    StoreModule.forRoot({
+      users: usersReducer,
+      pages: pagesReducer,
+      search: searchReducer
+    }),
     HttpClientModule
   ],
   providers: [
