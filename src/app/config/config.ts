@@ -9,6 +9,6 @@ export const AppConfigToken = new InjectionToken<AppConfig>('app.config');
 
 export const Config: AppConfig = {
   apiUrl: 'https://api.github.com',
-  pageSize: 10
+  pageSize: 5
 };
 
