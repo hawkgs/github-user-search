@@ -8,7 +8,7 @@ export const toUser = (u: ApiUser, complete?: boolean): User => new User({
   username: u.login,
   fullName: u.name || '',
   avatar: u.avatar_url || u.gravatar_id || '',
-  url: u.url,
+  url: u.html_url,
   bio: u.bio || '',
   repos: u.public_repos,
   followers: u.followers,

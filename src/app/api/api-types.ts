@@ -3,7 +3,7 @@ export interface ApiUser {
   login: string;
   avatar_url: string;
   gravatar_id: string;
-  url: string;
+  html_url: string;
   public_repos: number;
   followers: number;
   bio: string | null;

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Inject } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { DOCUMENT } from '@angular/common';
 import { User } from '../../../store/store';
 import { loadUserData } from '../../../store/users';
 
@@ -11,7 +12,10 @@ import { loadUserData } from '../../../store/users';
 export class UserProfileComponent implements OnInit {
   @Input() user: User;
 
-  constructor(private store: Store<any>) {}
+  constructor(
+    private store: Store<any>,
+    @Inject(DOCUMENT) private document: any
+  ) {}
 
   ngOnInit() {
     if (!this.user.completeData) {
@@ -20,6 +24,6 @@ export class UserProfileComponent implements OnInit {
   }
 
   onClick() {
-    console.log('goto', this.user.url);
+    this.document.location.href = this.user.url;
   }
 }
