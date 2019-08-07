@@ -9,6 +9,7 @@ import { ResultsListComponent } from './results-list/results-list.component';
 import { UserProfileComponent } from './results-list/user-profile/user-profile.component';
 import { PagesComponent } from './results-list/pages/pages.component';
 import { LoaderComponent } from './results-list/loader/loader.component';
+import { UsersApiRequests } from '../api/users.api-requests';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { LoaderComponent } from './results-list/loader/loader.component';
   imports: [
     CommonModule,
     UserSearchRoutingModule
-  ]
+  ],
+  providers: [UsersApiRequests]
 })
 export class UserSearchModule { }
