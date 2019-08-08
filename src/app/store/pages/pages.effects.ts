@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { List } from 'immutable';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
-import { EMPTY, from } from 'rxjs';
+import { EMPTY } from 'rxjs';
 import { mergeMap, catchError, switchMap } from 'rxjs/operators';
 import { UsersApiRequests } from '../../api/users.api-requests';
 import { User, Page, Search } from '../store';
@@ -16,16 +16,16 @@ export class PagesEffects {
   loadUserData$ = createEffect(() => this.actions$.pipe(
     ofType(ActionType.LoadPage),
     mergeMap(
-      (action: { options: SearchOptions, page: number }) => from(this.usersApi.search(action.options, action.page)
-    )
-      .pipe(
-        switchMap(([users, page, search]: [List<User>, Page, Search]) => [
-          addUsers({ users }),
-          setSearch({ search }),
-          addPage({ page })
-        ]),
-        catchError(() => EMPTY)
-      ))
+      (action: { options: SearchOptions, page: number }) =>
+        this.usersApi.search(action.options, action.page)
+          .pipe(
+            switchMap(([users, page, search]: [List<User>, Page, Search]) => [
+              addUsers({ users }),
+              setSearch({ search }),
+              addPage({ page })
+            ]),
+            catchError(() => EMPTY)
+          ))
     )
   );
 

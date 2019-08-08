@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Channel } from './channel';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,19 +9,19 @@ export class HttpChannel extends Channel {
     super();
   }
 
-  get(url: string, options?: any): Promise<any> {
-    return this.http.get(url, options).toPromise();
+  get(url: string, options?: any): Observable<any> {
+    return this.http.get(url, options);
   }
 
-  create(url: string, payload: any, options?: any): Promise<any> {
-    return this.http.post(url, payload, options).toPromise();
+  create(url: string, payload: any, options?: any): Observable<any> {
+    return this.http.post(url, payload, options);
   }
 
-  update(url: string, payload: any, options?: any): Promise<any> {
-    return this.http.put(url, payload, options).toPromise();
+  update(url: string, payload: any, options?: any): Observable<any> {
+    return this.http.put(url, payload, options);
   }
 
-  delete(url: string, options?: any): Promise<any> {
-    return this.http.delete(url, options).toPromise();
+  delete(url: string, options?: any): Observable<any> {
+    return this.http.delete(url, options);
   }
 }
